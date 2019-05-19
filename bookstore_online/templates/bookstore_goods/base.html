@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block center_body %}
+
+    <div class="navbar_con">
+		<div class="navbar clearfix">
+			<div class="subnav_con fl">
+				<h1>图书分类</h1>
+				<span></span>
+				<ul class="subnav">
+					<li><a href="/list1_1_1/" class="art">文学艺术</a></li>
+					<li><a href="/list2_1_1/" class="science">人文社科</a></li>
+					<li><a href="/list3_1_1/" class="technology">科学技术</a></li>
+					<li><a href="/list4_1_1/" class="children">少儿读物</a></li>
+					<li><a href="/list5_1_1/" class="life">健康生活</a></li>
+					<li><a href="/list6_1_1/" class="education">考试教育</a></li>
+				</ul>
+			</div>
+			<ul class="navlist fl">
+				<li><a href="{% url "bookstore_goods:index" %}">首页</a></li>
+				<li class="interval">|</li>
+				<li><a href="">移动书店</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="breadcrumb">
+		图书分类 > {{ title }}
+		{% if id|default:' ' != ' ' %}
+        > 商品详情
+		{% endif %}
+	</div>
+
+{% block center_content %}
+
+{% endblock center_content %}
+
+
+
+{% endblock center_body %}
